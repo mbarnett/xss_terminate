@@ -45,6 +45,9 @@ module XssTerminate
         else
           self[field] = RailsSanitize.full_sanitizer.sanitize(value)
         end
+
+				# special for @gorman, stripping of extraneous whitespace
+				self[field] = value.strip
       end
       
     end
